@@ -16,6 +16,8 @@ extension ParseClient{
         static let APIScheme = "https"
         static let APIHost = "parse.udacity.com"
         static let APIPath = "/parse"
+        static let Limit:NSNumber = 100
+        static let Order = "-updatedAt"
     }
     
     // MARK: Methods
@@ -53,6 +55,8 @@ extension ParseClient{
         static let longitude = "longitude"
         static let Username = "username"
         static let UserID = "user_id"
+        static let Limit = "limit"
+        static let Order = "order"
         static let Password = "password"
         static let RequestToken = "request_token"
         static let Query = "query"

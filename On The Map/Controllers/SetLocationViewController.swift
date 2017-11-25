@@ -17,12 +17,6 @@ class SetLocationViewController: UIViewController {
     
     //MARK LifeCycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        studentMediaUrl.delegate = self
-        studentLocation.delegate = self
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subcribeToKeyboardNotificiations()
@@ -58,8 +52,8 @@ class SetLocationViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
             validFields = false
         }
-        if(studentMediaUrl.text!.isEmpty){
-            alert = UIAlertController(title: "No URL Entered", message: "Please enter a URL", preferredStyle: .alert)
+        if(!ValidateURL.isValidURL(urlString: studentMediaUrl.text)){
+            alert = UIAlertController(title: "Invalid URL", message: "Please enter a valid URL, starting with https://", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
             validFields = false
         }
@@ -84,7 +78,9 @@ class SetLocationViewController: UIViewController {
     //MARK: Keyboard Actions
     
     @objc func keyboardWillShow(notification: NSNotification){
-        self.view.frame.origin.y = 100 - getKeyboardHeight(notification: notification)
+        if(UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight){
+            self.view.frame.origin.y = 150 - getKeyboardHeight(notification: notification)
+        }
     }
     
     @objc func keyboardWillHide(notification: NSNotification){
@@ -115,9 +111,5 @@ extension SetLocationViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         textField.resignFirstResponder()
         return true
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text = ""
     }
 }

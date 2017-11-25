@@ -59,13 +59,15 @@ extension UdacityClient{
         
         let parameters = [ParameterKeys.UserID: self.userID]
         var mutableMethod : String = Methods.Account
-        mutableMethod = substituteKeyInMethod(mutableMethod, key: URLKeys.UserID, value: String(self.userID!))!
+        
+        if let userID = self.userID{
+            mutableMethod = substituteKeyInMethod(mutableMethod, key: URLKeys.UserID, value: String(userID))!
+        }
         
         let _ = taskForGETMethod(mutableMethod, parameters: parameters as [String:AnyObject]) { (results, error) in
             
             if let error = error {
-                print(error)
-                completionHandlerForUserID(false, nil, "Login Failed (User ID).")
+                completionHandlerForUserID(false, nil, error.localizedFailureReason)
             } else {
                 if let user = results?[JSONResponseKeys.User] as? [String: AnyObject]{
                     if let lastName = user[JSONResponseKeys.LastName] as? String{
@@ -89,8 +91,7 @@ extension UdacityClient{
         let _ = taskForPOSTMethod(Methods.AuthenticationSessionNew, parameters: loginParameters, jsonBody: jsonBody) { (results, error) in
             
             if let error = error {
-                print(error)
-                completionHandlerForSession(false, nil, "Login Failed (Session ID).")
+                completionHandlerForSession(false, nil, error.localizedFailureReason)
             } else {
                 if let session = results?[JSONResponseKeys.Session] as? [String : AnyObject] {
                     if let sessionID = session[JSONResponseKeys.SessionID] as? String {

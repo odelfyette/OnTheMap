@@ -26,8 +26,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.debugTextLabel.text = ""
         appDelegate = UIApplication.shared.delegate as! AppDelegate
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
         setUIEnabled(enabled: true)
     }
     

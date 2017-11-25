@@ -9,6 +9,8 @@
 import Foundation
 
 struct ParseStudentLocation{
+  
+    static var sharedInstance:ParseStudentLocation!
     
     //MARK: Variables
     
@@ -46,4 +48,5 @@ struct ParseStudentLocation{
         
         return studentLocation
     }
+    
 }

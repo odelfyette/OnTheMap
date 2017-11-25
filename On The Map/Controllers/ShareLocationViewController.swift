@@ -18,10 +18,12 @@ class ShareLocationViewController: UIViewController {
     var studentLong: Double!
     var studentLat: Double!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     //MARK: LifeCycles
     
     override func viewWillAppear(_ animated: Bool) {
+        activityIndicator.alpha = 0
         setPin()
     }
     
@@ -57,7 +59,8 @@ class ShareLocationViewController: UIViewController {
 
 extension ShareLocationViewController: MKMapViewDelegate{
     func setPin(){
-        
+        activityIndicator.alpha = 1
+        activityIndicator.startAnimating()
         let geocoder = CLGeocoder()
         
         geocoder.geocodeAddressString(studentLocation){
@@ -75,6 +78,10 @@ extension ShareLocationViewController: MKMapViewDelegate{
                 let alert = UIAlertController(title: "Could not find location", message: "Please enter a different location", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+            }
+            performUIUpdatesOnMain {
+                self.activityIndicator.alpha = 0
+                self.activityIndicator.stopAnimating()
             }
         }
     }

@@ -18,6 +18,7 @@
 		D6092AC21F9B63B500910335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6092AC01F9B63B500910335 /* LaunchScreen.storyboard */; };
 		D639F4191FBAE622005686EF /* StringFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D639F4181FBAE622005686EF /* StringFormat.swift */; };
 		D639F41C1FBD80D3005686EF /* LoadingStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D639F41B1FBD80D3005686EF /* LoadingStudentsViewController.swift */; };
+		D66C0EAB1FC888F200514AEA /* ValidateURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C0EAA1FC888F200514AEA /* ValidateURL.swift */; };
 		D67F6FB01FB5C289000EEC49 /* SetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F6FAF1FB5C289000EEC49 /* SetLocationViewController.swift */; };
 		D67F6FB21FB5D539000EEC49 /* ShareLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F6FB11FB5D539000EEC49 /* ShareLocationViewController.swift */; };
 		D67F6FB61FB99699000EEC49 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F6FB51FB99699000EEC49 /* MainViewController.swift */; };
@@ -43,6 +44,7 @@
 		D6092AC31F9B63B500910335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D639F4181FBAE622005686EF /* StringFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormat.swift; sourceTree = "<group>"; };
 		D639F41B1FBD80D3005686EF /* LoadingStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStudentsViewController.swift; sourceTree = "<group>"; };
+		D66C0EAA1FC888F200514AEA /* ValidateURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateURL.swift; sourceTree = "<group>"; };
 		D67F6FAF1FB5C289000EEC49 /* SetLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLocationViewController.swift; sourceTree = "<group>"; };
 		D67F6FB11FB5D539000EEC49 /* ShareLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLocationViewController.swift; sourceTree = "<group>"; };
 		D67F6FB51FB99699000EEC49 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				D639F4181FBAE622005686EF /* StringFormat.swift */,
+				D66C0EAA1FC888F200514AEA /* ValidateURL.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				D6092ABA1F9B63B500910335 /* LoginViewController.swift in Sources */,
 				D67F6FB21FB5D539000EEC49 /* ShareLocationViewController.swift in Sources */,
 				D67F6FB01FB5C289000EEC49 /* SetLocationViewController.swift in Sources */,
+				D66C0EAB1FC888F200514AEA /* ValidateURL.swift in Sources */,
 				D6EE0D1A1FB07E490005AF3F /* ParseStudentCalls.swift in Sources */,
 				D67F6FB61FB99699000EEC49 /* MainViewController.swift in Sources */,
 				D639F4191FBAE622005686EF /* StringFormat.swift in Sources */,
