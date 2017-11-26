@@ -29,9 +29,7 @@ class LoadingStudentsViewController: UIViewController {
         activityIndicator.startAnimating()
         
         ParseClient.sharedInstance().getStudentLocations{(studentLocations, error) in
-            if let studentLocations = studentLocations{
-                self.appDelegate.studentLocations = studentLocations
-            }else{
+            if (ParseStudentLocationSharedInstance.sharedInstance.studentLocations.isEmpty){
                 print(error ?? "no student locations retrieved")
             }
             performUIUpdatesOnMain {

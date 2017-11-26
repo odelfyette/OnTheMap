@@ -29,8 +29,8 @@ extension ParseClient{
             } else {
                 if let results = results?[JSONResponseKeys.StudentLocationResults] as? [[String:AnyObject]] {
                     
-                    let studentLocations = ParseStudentLocation.studentLocationFromResults(results)
-                    completionHandlerForStudLoc(studentLocations, nil)
+                    ParseStudentLocationSharedInstance.sharedInstance.studentLocations = ParseStudentLocation.studentLocationFromResults(results)
+                    completionHandlerForStudLoc(ParseStudentLocationSharedInstance.sharedInstance.studentLocations, nil)
                 } else {
                     completionHandlerForStudLoc(nil, NSError(domain: "getStudentLocations parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Could not parse getStudentLocations"]))
                 }

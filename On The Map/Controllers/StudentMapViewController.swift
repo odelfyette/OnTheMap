@@ -35,30 +35,31 @@ class StudentMapViewController: UIViewController {
 extension StudentMapViewController: MKMapViewDelegate{
     func setPins(){
         var annotations = [MKPointAnnotation]()
-        
-        for student in appDelegate.studentLocations{
-            
-            if let latitude = student.latitude, let longitude = student.longitude{
-                let lat = CLLocationDegrees(latitude)
-                let long = CLLocationDegrees(longitude)
+        if(ParseStudentLocationSharedInstance.sharedInstance.studentLocations != nil){
+            for student in ParseStudentLocationSharedInstance.sharedInstance.studentLocations{
                 
-                let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = coordinate
-                annotation.title = StringFormat.formatNameText(firstName: student.firstName, lastName: student.lastName)
-                
-                if let mediaURL = student.mediaURL{
-                    annotation.subtitle = mediaURL
-                }else{
-                    annotation.subtitle = "[No Media URL]"
+                if let latitude = student.latitude, let longitude = student.longitude{
+                    let lat = CLLocationDegrees(latitude)
+                    let long = CLLocationDegrees(longitude)
+                    
+                    let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                    
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = coordinate
+                    annotation.title = StringFormat.formatNameText(firstName: student.firstName, lastName: student.lastName)
+                    
+                    if let mediaURL = student.mediaURL{
+                        annotation.subtitle = mediaURL
+                    }else{
+                        annotation.subtitle = "[No Media URL]"
+                    }
+                    
+                    annotations.append(annotation)
                 }
-                
-                annotations.append(annotation)
             }
+            
+            self.mapView.addAnnotations(annotations)
         }
-        
-        self.mapView.addAnnotations(annotations)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

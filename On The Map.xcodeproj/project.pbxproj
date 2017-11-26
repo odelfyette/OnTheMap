@@ -19,6 +19,7 @@
 		D639F4191FBAE622005686EF /* StringFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D639F4181FBAE622005686EF /* StringFormat.swift */; };
 		D639F41C1FBD80D3005686EF /* LoadingStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D639F41B1FBD80D3005686EF /* LoadingStudentsViewController.swift */; };
 		D66C0EAB1FC888F200514AEA /* ValidateURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C0EAA1FC888F200514AEA /* ValidateURL.swift */; };
+		D66C0EAD1FCB365900514AEA /* ParseStudentLocationSharedInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C0EAC1FCB365900514AEA /* ParseStudentLocationSharedInstance.swift */; };
 		D67F6FB01FB5C289000EEC49 /* SetLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F6FAF1FB5C289000EEC49 /* SetLocationViewController.swift */; };
 		D67F6FB21FB5D539000EEC49 /* ShareLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F6FB11FB5D539000EEC49 /* ShareLocationViewController.swift */; };
 		D67F6FB61FB99699000EEC49 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F6FB51FB99699000EEC49 /* MainViewController.swift */; };
@@ -45,6 +46,7 @@
 		D639F4181FBAE622005686EF /* StringFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormat.swift; sourceTree = "<group>"; };
 		D639F41B1FBD80D3005686EF /* LoadingStudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStudentsViewController.swift; sourceTree = "<group>"; };
 		D66C0EAA1FC888F200514AEA /* ValidateURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateURL.swift; sourceTree = "<group>"; };
+		D66C0EAC1FCB365900514AEA /* ParseStudentLocationSharedInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseStudentLocationSharedInstance.swift; sourceTree = "<group>"; };
 		D67F6FAF1FB5C289000EEC49 /* SetLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLocationViewController.swift; sourceTree = "<group>"; };
 		D67F6FB11FB5D539000EEC49 /* ShareLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLocationViewController.swift; sourceTree = "<group>"; };
 		D67F6FB51FB99699000EEC49 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				D6EE0D131FB07E070005AF3F /* ParseConstants.swift */,
 				D6EE0D171FB07E320005AF3F /* ParseStudentLocation.swift */,
 				D6EE0D191FB07E490005AF3F /* ParseStudentCalls.swift */,
+				D66C0EAC1FCB365900514AEA /* ParseStudentLocationSharedInstance.swift */,
 			);
 			path = UdacityParse;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				D6EE0D1A1FB07E490005AF3F /* ParseStudentCalls.swift in Sources */,
 				D67F6FB61FB99699000EEC49 /* MainViewController.swift in Sources */,
 				D639F4191FBAE622005686EF /* StringFormat.swift in Sources */,
+				D66C0EAD1FCB365900514AEA /* ParseStudentLocationSharedInstance.swift in Sources */,
 				D639F41C1FBD80D3005686EF /* LoadingStudentsViewController.swift in Sources */,
 				D60827B51F9B8E930093FA7A /* GCDBlackBox.swift in Sources */,
 				D6EE0D141FB07E070005AF3F /* ParseConstants.swift in Sources */,

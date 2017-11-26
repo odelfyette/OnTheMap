@@ -28,7 +28,7 @@ class StudentsTableViewController: UIViewController {
 // MARK: - Table view data source
 extension StudentsTableViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let studentLocation = appDelegate.studentLocations[indexPath.row]
+        let studentLocation = ParseStudentLocationSharedInstance.sharedInstance.studentLocations[indexPath.row]
         
         if(ValidateURL.isValidURL(urlString: studentLocation.mediaURL)){
             UIApplication.shared.open(URL(string: studentLocation.mediaURL!)!, options: [:], completionHandler: nil)
@@ -40,12 +40,12 @@ extension StudentsTableViewController: UITableViewDelegate{
 
 extension StudentsTableViewController: UITableViewDataSource{
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return appDelegate.studentLocations.count
+        return ParseStudentLocationSharedInstance.sharedInstance.studentLocations.count
     }
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentCell")!
-        let studentLocation = appDelegate.studentLocations[indexPath.row]
+        let studentLocation = ParseStudentLocationSharedInstance.sharedInstance.studentLocations[indexPath.row]
         
         cell.textLabel?.text = StringFormat.formatNameText(firstName: studentLocation.firstName, lastName: studentLocation.lastName)
         
