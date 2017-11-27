@@ -47,7 +47,7 @@ class ParseClient : NSObject{
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                sendError("Your request returned a status code other than 2xx!")
+                sendError("There was an error connecting to the server.")
                 return
             }
             
@@ -98,7 +98,7 @@ class ParseClient : NSObject{
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                sendError("Your request returned a status code other than 2xx!")
+                sendError("There was an error connecting to the server.")
                 return
             }
             

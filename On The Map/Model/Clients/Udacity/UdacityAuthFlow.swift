@@ -46,7 +46,7 @@ extension UdacityClient{
         let _ = taskForDELETEMethod(method, parameters: [:]){ (results, error) in
             if let error = error {
                 print(error)
-                completionHandlerForLogOut(false, "Login Failed LogOut.")
+                completionHandlerForLogOut(false, "LogOut Failed.")
             } else {
                 completionHandlerForLogOut(true, nil)
             }
@@ -100,7 +100,7 @@ extension UdacityClient{
                     }
                 } else {
                     print("Could not find \(JSONResponseKeys.SessionID) in \(results!)")
-                    completionHandlerForSession(false, nil, "Login Failed (Session ID).")
+                    completionHandlerForSession(false, nil, "Could not authenicate user.")
                 }
             }
         }

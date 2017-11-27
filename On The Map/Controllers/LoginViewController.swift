@@ -57,7 +57,11 @@ class LoginViewController: UIViewController {
                         if success {
                             self.completeLogin()
                         } else {
-                            self.displayError(errorString)
+                            if errorString != nil{
+                                self.displayError(errorString)
+                            }else{
+                                self.debugTextLabel.text = "There was an error signing in."
+                            }
                         }
                         self.setUIEnabled(enabled: true)
                     }
