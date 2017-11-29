@@ -22,17 +22,16 @@ extension UdacityClient{
                 self.sessionID = sessionID
                 
                 self.getUser() { (success, userID, errorString) in
-
                     if success {
-
                         if let userID = userID {
                             self.userID = userID
                         }
                     }
-
-                    completionHandlerForAuth(success, errorString)
                 }
-            } else {
+                
+                completionHandlerForAuth(success, errorString)
+                
+            }else{
                 completionHandlerForAuth(success, errorString)
             }
         }
@@ -46,7 +45,7 @@ extension UdacityClient{
         let _ = taskForDELETEMethod(method, parameters: [:]){ (results, error) in
             if let error = error {
                 print(error)
-                completionHandlerForLogOut(false, "LogOut Failed.")
+                completionHandlerForLogOut(false, "Log out Failed.")
             } else {
                 completionHandlerForLogOut(true, nil)
             }
@@ -91,7 +90,7 @@ extension UdacityClient{
         let _ = taskForPOSTMethod(Methods.AuthenticationSessionNew, parameters: loginParameters, jsonBody: jsonBody) { (results, error) in
             
             if let error = error {
-                completionHandlerForSession(false, nil, error.localizedFailureReason)
+                completionHandlerForSession(false, nil, error.localizedDescription)
             } else {
                 if let session = results?[JSONResponseKeys.Session] as? [String : AnyObject] {
                     if let sessionID = session[JSONResponseKeys.SessionID] as? String {

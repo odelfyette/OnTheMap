@@ -17,6 +17,7 @@ extension UdacityClient{
         static let APIPath = "/api"
         static let ParseAPIHost = "www.parse.udacity.com"
         static let ParseAPIPath = "/parse"
+        static let InvalidCredentialsCode = 403
     }
     
     // MARK: Methods

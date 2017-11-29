@@ -97,12 +97,16 @@ class UdacityClient : NSObject{
             }
             
             guard (error == nil) else {
-                sendError("There was an error with your request: \(error!)")
+                sendError("There was an error with your request: \(String(describing: error!.localizedDescription))")
                 return
             }
 
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                sendError("There was an error connecting to the server.")
+                if((response as? HTTPURLResponse)!.statusCode == Constants.InvalidCredentialsCode){
+                    sendError("Invalid user credentials.")
+                }else{
+                    sendError("There was an error connecting to the server.")
+                }
                 return
             }
             
@@ -155,7 +159,7 @@ class UdacityClient : NSObject{
             }
             
             guard (error == nil) else {
-                sendError("There was an error with your request: \(error!)")
+                sendError("There was an error with your request: \(error!.localizedDescription)")
                 return
             }
             

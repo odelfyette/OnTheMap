@@ -57,7 +57,7 @@ extension StudentMapViewController: MKMapViewDelegate{
                     annotations.append(annotation)
                 }
             }
-            
+            self.mapView.removeAnnotations(mapView.annotations)
             self.mapView.addAnnotations(annotations)
         }
     }

@@ -23,7 +23,7 @@ struct ParseStudentLocation{
     
     //MARK: Init
     
-    init(dictionary: [String:AnyObject]) {
+    init?(dictionary: [String:AnyObject]) {
         objectId = dictionary[ParseClient.JSONResponseKeys.ObjectID] as? String
         uniqueKey = dictionary[ParseClient.JSONResponseKeys.UniqueKey] as? String
         firstName = dictionary[ParseClient.JSONResponseKeys.FirstName] as? String
@@ -41,7 +41,7 @@ struct ParseStudentLocation{
         var studentLocation = [ParseStudentLocation]()
         
         for result in results {
-            studentLocation.append(ParseStudentLocation(dictionary: result))
+            studentLocation.append(ParseStudentLocation(dictionary: result)!)
         }
         
         return studentLocation
